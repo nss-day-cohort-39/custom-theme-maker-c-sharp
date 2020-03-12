@@ -1,15 +1,26 @@
 import { useScores } from "./ScoreProvider.js"
 import { Score } from "./Score.js"
 
-export const ScoreList = () => {
-    const scores = useScores()
-    return render(scores)
-}
+const eventHub = document.querySelector("#container")
 
 const render = scoreCollection => {
     return `
-        <article class="container__panel scores">
-            ${scoreCollection.map(score => Score(score)).join("")}
-        </article>
+    <article class="container__panel scores">
+    ${scoreCollection.map(score => Score(score)).join("")}
+    </article>
     `
+}
+
+
+eventHub.addEventListener("fontChosen", event => {
+    const scoreContainer = document.querySelector(".scores")
+    const font = event.detail.font
+
+    scoreContainer.classList = []
+    scoreContainer.classList.add(font)
+})
+
+export const ScoreList = () => {
+    const scores = useScores()
+    return render(scores)
 }

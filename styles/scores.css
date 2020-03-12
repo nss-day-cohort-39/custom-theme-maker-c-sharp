@@ -9,3 +9,19 @@
     padding: 0.5rem;
     margin: 0.5rem;
 }
+
+.xsmall {
+    font-size: x-small;
+}
+
+.small {
+    font-size: small;
+}
+
+.large {
+    font-size: large;
+}
+
+.xlarge {
+    font-size: x-large;
+}
