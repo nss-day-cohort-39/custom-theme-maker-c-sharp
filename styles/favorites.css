@@ -14,3 +14,19 @@
     max-height: 8rem;
     max-width: 8rem;
 }
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green
+}
+
+.purple {
+    background-color: purple;
+}

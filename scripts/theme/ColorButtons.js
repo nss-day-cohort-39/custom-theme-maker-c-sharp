@@ -1,3 +1,17 @@
+const eventHub = document.querySelector("#container")
+
+eventHub.addEventListener ("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("btnTheme--")) {
+        const [prefix, chosenColor] = clickEvent.target.id.split("--")
+        const backgroundChosenEvent = new CustomEvent("colorChosen", {
+            detail: {
+                color: chosenColor
+            }
+        })
+        eventHub.dispatchEvent(backgroundChosenEvent)
+    }
+})
+
 export const ColorButtons = () => {
     return `
         <article class="colors">
