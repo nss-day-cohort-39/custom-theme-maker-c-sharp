@@ -4,11 +4,6 @@ import { Score } from "./Score.js"
 
 const eventHub = document.querySelector("#container")
 
-export const ScoreList = () => {
-    const scores = useScores()
-    return render(scores)
-}
-
 const render = scoreCollection => {
     return `
         <article id="scores" class="container__panel scores">
@@ -26,3 +21,16 @@ eventHub.addEventListener("borderChosen", event => {
     borderContainer.classList = []
     borderContainer.classList.add(border)
 })
+
+eventHub.addEventListener("fontChosen", event => {
+    const scoreContainer = document.querySelector("#scores")
+    const font = event.detail.font
+
+    scoreContainer.classList = []
+    scoreContainer.classList.add(font)
+})
+
+export const ScoreList = () => {
+    const scores = useScores()
+    return render(scores)
+}

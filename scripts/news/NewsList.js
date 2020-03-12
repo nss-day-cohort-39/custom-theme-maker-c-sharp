@@ -23,3 +23,11 @@ eventHub.addEventListener("borderChosen", event => {
     borderContainer.classList = []
     borderContainer.classList.add(border)
 })
+
+eventHub.addEventListener("fontChosen", event => {
+    const scoreContainer = document.querySelector("#news")
+    const font = event.detail.font
+
+    scoreContainer.classList = []
+    scoreContainer.classList.add(font)
+})
