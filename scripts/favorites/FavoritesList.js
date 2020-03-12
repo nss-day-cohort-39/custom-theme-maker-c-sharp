@@ -3,6 +3,11 @@ import { FavoriteItem } from "./FavoriteItem.js"
 
 const eventHub = document.querySelector("#container")
 
+export const FavoritesList = () => {
+    const favoriteItems = useFavorites()
+    return render(favoriteItems)
+}
+
 const render = favoriteCollection => {
     return `
         <article id="favorites" class="container__panel favorites">
@@ -19,7 +24,19 @@ eventHub.addEventListener("colorChosen", event => {
     favoritesContainer.classList.add(color)
 })
 
-export const FavoritesList = () => {
-    const favoriteItems = useFavorites()
-    return render(favoriteItems)
-}
+eventHub.addEventListener("borderChosen", event => {
+    const borderContainer = document.querySelector("#favorites")
+    const border = event.detail.border
+
+    borderContainer.classList = []
+    borderContainer.classList.add(border)
+})
+
+eventHub.addEventListener("fontChosen", event => {
+    const scoreContainer = document.querySelector("#favorites")
+    const font = event.detail.font
+
+    scoreContainer.classList = []
+    scoreContainer.classList.add(font)
+})
+

@@ -9,3 +9,15 @@
     padding: 0.5rem;
     margin: 0.5rem;
 }
+
+.onePx {
+    border: 1px solid black;
+  }
+  
+.threePx {
+    border: 3px solid black;
+  }
+  
+.fivePx {
+    border: 5px solid black;
+  }
