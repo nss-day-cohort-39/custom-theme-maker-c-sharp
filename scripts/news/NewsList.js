@@ -31,3 +31,11 @@ eventHub.addEventListener("fontChosen", event => {
     scoreContainer.classList = []
     scoreContainer.classList.add(font)
 })
+
+eventHub.addEventListener("colorChosen", event => {
+    const favoritesContainer = document.querySelector("#news")
+    const color = event.detail.color
+    
+    favoritesContainer.classList = []
+    favoritesContainer.classList.add(color)
+})

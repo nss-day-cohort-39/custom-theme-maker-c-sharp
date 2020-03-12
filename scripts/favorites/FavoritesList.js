@@ -16,8 +16,16 @@ const render = favoriteCollection => {
     `
 }
 
+eventHub.addEventListener("colorChosen", event => {
+    const favoritesContainer = document.querySelector("#favorites")
+    const color = event.detail.color
+    
+    favoritesContainer.classList = []
+    favoritesContainer.classList.add(color)
+})
+
 eventHub.addEventListener("borderChosen", event => {
-    const borderContainer = document.querySelector(".favorites")
+    const borderContainer = document.querySelector("#favorites")
     const border = event.detail.border
 
     borderContainer.classList = []

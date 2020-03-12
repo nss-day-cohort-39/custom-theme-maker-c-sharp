@@ -30,6 +30,14 @@ eventHub.addEventListener("fontChosen", event => {
     scoreContainer.classList.add(font)
 })
 
+eventHub.addEventListener("colorChosen", event => {
+    const favoritesContainer = document.querySelector("#scores")
+    const color = event.detail.color
+    
+    favoritesContainer.classList = []
+    favoritesContainer.classList.add(color)
+})
+
 export const ScoreList = () => {
     const scores = useScores()
     return render(scores)
