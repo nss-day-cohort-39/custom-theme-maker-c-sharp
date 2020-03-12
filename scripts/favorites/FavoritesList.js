@@ -1,6 +1,8 @@
 import { useFavorites } from "./FavoritesProvider.js"
 import { FavoriteItem } from "./FavoriteItem.js"
 
+const eventHub = document.querySelector("#container")
+
 export const FavoritesList = () => {
     const favoriteItems = useFavorites()
     return render(favoriteItems)
@@ -8,8 +10,16 @@ export const FavoritesList = () => {
 
 const render = favoriteCollection => {
     return `
-        <article class="container__panel favorites">
+        <article id="favorites" class="container__panel favorites">
             ${favoriteCollection.map(favorite => FavoriteItem(favorite)).join("")}
         </article>
     `
 }
+
+eventHub.addEventListener("borderChosen", event => {
+    const borderContainer = document.querySelector(".favorites")
+    const border = event.detail.border
+
+    borderContainer.classList = []
+    borderContainer.classList.add(border)
+})
