@@ -12,16 +12,16 @@ export const NewsList = () => {
 
 const render = newsCollection => {
     return `
-        <article class="container__panel scores">
+        <article id="news" class="container__panel scores">
             ${newsCollection.map(news => NewsItem(news)).join("")}
         </article>
     `
 }
 
-// eventHub.addEventListener("fontChosen", event => {
-//     const scoreContainer = document.querySelector(".scores")
-//     const font = event.detail.font
+eventHub.addEventListener("fontChosen", event => {
+    const scoreContainer = document.querySelector("#news")
+    const font = event.detail.font
 
-//     scoreContainer.classList = []
-//     scoreContainer.classList.add(font)
-// })
+    scoreContainer.classList = []
+    scoreContainer.classList.add(font)
+})

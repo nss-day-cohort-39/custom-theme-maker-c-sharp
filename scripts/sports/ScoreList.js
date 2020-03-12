@@ -5,7 +5,7 @@ const eventHub = document.querySelector("#container")
 
 const render = scoreCollection => {
     return `
-    <article class="container__panel scores">
+    <article id="scores" class="container__panel scores">
     ${scoreCollection.map(score => Score(score)).join("")}
     </article>
     `
@@ -13,7 +13,7 @@ const render = scoreCollection => {
 
 
 eventHub.addEventListener("fontChosen", event => {
-    const scoreContainer = document.querySelector(".scores")
+    const scoreContainer = document.querySelector("#scores")
     const font = event.detail.font
 
     scoreContainer.classList = []
