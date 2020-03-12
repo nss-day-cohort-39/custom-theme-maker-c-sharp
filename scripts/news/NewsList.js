@@ -1,9 +1,7 @@
 import { useNews } from "./NewsProvider.js"
 import { NewsItem } from "./NewsItem.js"
 
-
 const eventHub = document.querySelector("#container")
-
 
 export const NewsList = () => {
     const newsItems = useNews()
@@ -17,6 +15,14 @@ const render = newsCollection => {
         </article>
     `
 }
+
+eventHub.addEventListener("borderChosen", event => {
+    const borderContainer = document.querySelector("#news")
+    const border = event.detail.border
+
+    borderContainer.classList = []
+    borderContainer.classList.add(border)
+})
 
 eventHub.addEventListener("fontChosen", event => {
     const scoreContainer = document.querySelector("#news")

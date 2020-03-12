@@ -3,7 +3,6 @@ import { FavoriteItem } from "./FavoriteItem.js"
 
 const eventHub = document.querySelector("#container")
 
-
 export const FavoritesList = () => {
     const favoriteItems = useFavorites()
     return render(favoriteItems)
@@ -16,6 +15,14 @@ const render = favoriteCollection => {
         </article>
     `
 }
+
+eventHub.addEventListener("borderChosen", event => {
+    const borderContainer = document.querySelector(".favorites")
+    const border = event.detail.border
+
+    borderContainer.classList = []
+    borderContainer.classList.add(border)
+})
 
 eventHub.addEventListener("fontChosen", event => {
     const scoreContainer = document.querySelector("#favorites")
