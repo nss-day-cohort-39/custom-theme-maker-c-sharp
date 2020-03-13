@@ -20,22 +20,23 @@ eventHub.addEventListener("colorChosen", event => {
     const favoritesContainer = document.querySelector("#favorites")
     const color = event.detail.color
     
-    favoritesContainer.classList.remove('red', 'purple', 'blue', 'green')
+    favoritesContainer.classList = []
     favoritesContainer.classList.add(color)
 })
 
 eventHub.addEventListener("borderChosen", event => {
-    const favoritesContainer = document.querySelector("#favorites")
+    const borderContainer = document.querySelector("#favorites")
     const border = event.detail.border
 
-    favoritesContainer.classList.remove('onePx', 'threePx', 'fivePx')
-    favoritesContainer.classList.add(border)
+    borderContainer.classList = []
+    borderContainer.classList.add(border)
 })
 
 eventHub.addEventListener("fontChosen", event => {
-    const favoritesContainer = document.querySelector("#favorites")
+    const scoreContainer = document.querySelector("#favorites")
     const font = event.detail.font
 
-    favoritesContainer.classList.remove('small', 'xsmall', 'large', 'xlarge')
-    favoritesContainer.classList.add(font)
+    scoreContainer.classList = []
+    scoreContainer.classList.add(font)
 })
+
