@@ -16,26 +16,26 @@ const render = newsCollection => {
     `
 }
 
+eventHub.addEventListener("colorChosen", event => {
+    const newsContainer = document.querySelector("#news")
+    const color = event.detail.color
+    
+    newsContainer.classList.remove('red', 'purple', 'blue', 'green')
+    newsContainer.classList.add(color)
+})
+
 eventHub.addEventListener("borderChosen", event => {
-    const borderContainer = document.querySelector("#news")
+    const newsContainer = document.querySelector("#news")
     const border = event.detail.border
 
-    borderContainer.classList = []
-    borderContainer.classList.add(border)
+    newsContainer.classList.remove('onePx', 'threePx', 'fivePx')
+    newsContainer.classList.add(border)
 })
 
 eventHub.addEventListener("fontChosen", event => {
-    const scoreContainer = document.querySelector("#news")
+    const newsContainer = document.querySelector("#news")
     const font = event.detail.font
 
-    scoreContainer.classList = []
-    scoreContainer.classList.add(font)
-})
-
-eventHub.addEventListener("colorChosen", event => {
-    const favoritesContainer = document.querySelector("#news")
-    const color = event.detail.color
-    
-    favoritesContainer.classList = []
-    favoritesContainer.classList.add(color)
+    newsContainer.classList.remove('small', 'xsmall', 'large', 'xlarge')
+    newsContainer.classList.add(font)
 })
