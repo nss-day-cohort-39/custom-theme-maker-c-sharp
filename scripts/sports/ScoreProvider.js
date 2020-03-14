@@ -55,4 +55,7 @@ let scores = [
     },
 ]
 
+// export const sortPoints = () => console.log(scores.map(a => a.points));
+
+scores.sort((a, b) => b.points - a.points)
 export const useScores = () => scores.slice()
